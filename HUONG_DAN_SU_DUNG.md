@@ -30,3 +30,11 @@
 - Các file `.exe` cũ trong thư mục (`GPVV.exe`, `SetupNG.exe`…) là **bản biên dịch cũ, vẫn còn kiểm tra key** — muốn dùng bản không key phải chạy/biên dịch lại từ `.au3` đã sửa (menu tự ưu tiên `.exe` cùng tên do bạn biên dịch đè lên).
 - Một số hàm phụ trong các module map được phục hồi ở mức "placeholder" (trả về hợp lệ để script khởi động và chạy vòng lặp chính) vì bản backup gốc đã mất hẳn thư viện dùng chung — đã ghi chú rõ trong từng file. Sau khi biên dịch, nên test từng module trong game và báo lại module nào chạy chưa đúng để chỉnh tiếp.
 - Môi trường phát triển bản sửa này không có Windows/AutoIt nên chưa biên dịch thử được; đã kiểm chứng tĩnh toàn bộ: không còn hàm nào được gọi mà không định nghĩa, cấu trúc `Func/EndFunc`, `While/WEnd`, `For/Next` cân bằng ở mọi file.
+
+## Quy trình chuẩn trên Windows (khuyên dùng — đỡ lỗi nhất)
+
+Repo GitHub đã có **đầy đủ mọi thứ**: toàn bộ file gốc + các bản sửa + 2 menu + 2 file .bat ở thư mục gốc repo.
+
+1. **Chạy `CapNhat_NGCFVN.bat`** — tải bản mới nhất từ GitHub về ghi đè folder của bạn. Bản v2 tự tìm đúng thư mục chứa `A_backup_original` (kể cả khi nó nằm trong thư mục con kiểu `NG_Update.exe\A_backup_original`), sao lưu bản cũ vào `_SaoLuu` trước, và **tự kiểm chứng sau cập nhật** (mở `map12.au3` kiểm tra đã có khai báo `$1Z` của bản mới chưa — nếu vẫn là bản cũ nó sẽ cảnh báo, thường do `NG_Update.exe` của bộ cũ tự tải lại bản gốc ghi đè; hãy tắt/xoá nó).
+2. **Chạy `Build_Tao_EXE.bat`** — biên dịch toàn bộ `.au3` thành `.exe` bằng Aut2Exe (cần cài AutoIt3) và gom vào folder sạch **`NGCFVN-App`** chỉ gồm: các `.exe` + `NG.dll`, `NG_HID.dll`, `modx86.dll` + 3 file `.ini`. Không còn `.au3`/`.bmp`/`SetupNG.exe`.
+3. Từ đó chỉ cần mở **`NGCFVN-App\NGCFVN_Menu.exe`** (hoặc `NGCFVN_Menu_Map.exe`) để dùng — bê nguyên folder này đi đâu cũng chạy độc lập được.
