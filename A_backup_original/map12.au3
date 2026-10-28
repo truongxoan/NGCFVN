@@ -1,4 +1,19 @@
-﻿Func _7()
+﻿; [NGCFVN v2 - KHAI BAO HANG SO GUI BI THIEU] Ban backup mat khoi khai bao
+; hang so giao dien (goc la cac hang so chuan cua AutoIt nhu $GUI_CHECKED,
+; $GUI_EVENT_CLOSE...) khien script bao loi "Variable used without being
+; declared" ngay khi mo. Gia tri khoi phuc theo dung ngu canh su dung
+; trong tung file va doi chieu voi cac file anh em con nguyen khoi hang so.
+Global $1T = 4
+Global $1U = 32
+Global $1V = 262144
+Global $1W = 6
+Global $1X = 7
+Global $1Y = -3
+Global $1Z = 1
+Global $20 = 4
+Global $21 = 128
+
+Func _7()
 	Return 0
 EndFunc
 Func _J($err = 0)

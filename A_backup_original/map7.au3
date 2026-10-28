@@ -1,4 +1,16 @@
-﻿EnvSet("NG_TOKEN", "NGTEAM")
+﻿; [NGCFVN v2 - KHAI BAO HANG SO GUI BI THIEU] Ban backup mat khoi khai bao
+; hang so giao dien (goc la cac hang so chuan cua AutoIt nhu $GUI_CHECKED,
+; $GUI_EVENT_CLOSE...) khien script bao loi "Variable used without being
+; declared" ngay khi mo. Gia tri khoi phuc theo dung ngu canh su dung
+; trong tung file va doi chieu voi cac file anh em con nguyen khoi hang so.
+Global $2J = -3
+Global $2K = 128
+Global $2L = -1
+Global $2M = 8
+Global $2V = "error"
+Global $2W = -1
+
+EnvSet("NG_TOKEN", "NGTEAM")
 #RequireAdmin
 Global Const $0 = 0
 Global Const $1 = 1
