@@ -708,7 +708,7 @@ Func _ZF($2S, $2T)
 EndFunc
 Func _ZG()
 	ConsoleWrite("[IMG] Cài ảnh vào: " & $3P & @CRLF)
-	FileInstall("C:\Users\Admin\Desktop\tool\Image\screenshot4.bmp", $3P & "dangnhap.bmp", 1)
+	FileInstall("screenshot4.bmp", $3P & "dangnhap.bmp", 1)
 	FileInstall("screenshot1.bmp", $3P & "start.bmp", 1)
 	FileInstall("screenshot2.bmp", $3P & "ss.bmp", 1)
 	FileInstall("screenshot3.bmp", $3P & "thamgia.bmp", 1)

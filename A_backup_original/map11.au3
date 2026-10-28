@@ -60,7 +60,7 @@ Local $1K = 0
 Local $8 = DllOpen("user32.dll")
 Opt("GUIOnEventMode", 1)
 $1L = GUICreate("SuperCleaner - Dọn dẹp hệ thống", 320, 160, 1028, 1)
-GUISetIcon("C:\Users\nguien\Desktop\AutoIT_AllTool\ico\briar.ico", -1)
+; [NGCFVN v2] Bo dong dat icon tu duong dan may tac gia (chi la icon trang tri, khong anh huong chuc nang): GUISetIcon("C:\Users\nguien\Desktop\AutoIT_AllTool\ico\briar.ico", -1)
 GUISetBkColor(15790320)
 $1M = GUICtrlCreateLabel("Key: " & $W & "-" & $V, 10, 5, 300, 20, $R)
 GUICtrlSetColor($1M, 16711680)
