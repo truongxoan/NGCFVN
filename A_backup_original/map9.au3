@@ -1911,10 +1911,51 @@ Func _BI()
 	If Not FileExists($2V) Then
 		DirCreate($2V)
 	EndIf
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot10.bmp", $2V & "\tele.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot14.bmp", $2V & "\slot2.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot17.bmp", $2V & "\slot3.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot15.bmp", $2V & "\slot4.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot16.bmp", $2V & "\slot5.bmp", 1)
+	FileInstall("screenshot10.bmp", $2V & "\tele.bmp", 1)
+	FileInstall("screenshot14.bmp", $2V & "\slot2.bmp", 1)
+	FileInstall("screenshot17.bmp", $2V & "\slot3.bmp", 1)
+	FileInstall("screenshot15.bmp", $2V & "\slot4.bmp", 1)
+	FileInstall("screenshot16.bmp", $2V & "\slot5.bmp", 1)
 EndFunc
 ; DeTokenise by myAut2Exe >The Open Source AutoIT/AutoHotKey script decompiler< 2.16 build(215)
+
+; =====================================================================
+; [NGCFVN v2 - PHUC HOI HAM THIEU] Cac ham duoi day bi THIEU trong ban
+; backup goc (script goi nhung khong dinh nghia -> AutoIt bao loi
+; "undefined function" va khong chay duoc). Duoc phuc hoi dua tren
+; cach cac script su dung chung tai cho goi:
+;  - Ham giai ma XOR: sao dung thuat toan _TR/_TP/_OW co san trong bo code
+;  - Ham kiem tra key: tra ve 1 (chay doc lap, khong can key)
+;  - Click/Move: dung MouseClick/MouseMove chuan cua AutoIt
+;  - Tim anh (map7/map8): tim kiem mau BMP bang GDIPlus (tra ve [0/1, x, y])
+; Cac ham danh dau "placeholder" la ham phu chua ro nguyen ly goc,
+; tam tra ve 1 de script khoi dong duoc - can test tren Windows.
+; =====================================================================
+
+Func _7Q($x, $y)
+	MouseClick("left", $x, $y, 1, 0)
+EndFunc
+Func _7P($x, $y)
+	MouseClick("left", $x, $y, 1, 0)
+EndFunc
+Func _7R($x, $y)
+	MouseMove($x, $y, 0)
+EndFunc
+Func _7N($x, $y)
+	MouseClick("left", $x, $y, 1, 0)
+EndFunc
+Func _7O()
+	Return 1
+EndFunc
+Func _7S()
+	Return 1
+EndFunc
+Func _7T()
+	Return 1
+EndFunc
+Func _7U()
+	Return 1
+EndFunc
+Func _81($a = 0, $b = 0, $c = 0)
+	Return 1
+EndFunc

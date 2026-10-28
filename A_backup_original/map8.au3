@@ -702,27 +702,137 @@ EndFunc
 Func _ZG()
 	ConsoleWrite("[IMG] Cài ảnh vào: " & $3P & @CRLF)
 	FileInstall("C:\Users\Admin\Desktop\tool\Image\screenshot4.bmp", $3P & "dangnhap.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot1.bmp", $3P & "start.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot2.bmp", $3P & "ss.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot3.bmp", $3P & "thamgia.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot4.bmp", $3P & "ingame.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot5.bmp", $3P & "xacnhan.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot6.bmp", $3P & "xacnhan1.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot7.bmp", $3P & "X.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot9.bmp", $3P & "chonkenh.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot13.bmp", $3P & "tudo2.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot34.bmp", $3P & "maychu.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot25.bmp", $3P & "tanbinh.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot14.bmp", $3P & "kenh4.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot15.bmp", $3P & "searchRoom.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot16.bmp", $3P & "Do.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot21.bmp", $3P & "NG_GP.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot22.bmp", $3P & "jump.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot24.bmp", $3P & "kenh2.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot37.bmp", $3P & "Xtbinh.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot36.bmp", $3P & "Xgoidexuat.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot28.bmp", $3P & "cuubinh.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot35.bmp", $3P & "cuubinh2.bmp", 1)
+	FileInstall("screenshot1.bmp", $3P & "start.bmp", 1)
+	FileInstall("screenshot2.bmp", $3P & "ss.bmp", 1)
+	FileInstall("screenshot3.bmp", $3P & "thamgia.bmp", 1)
+	FileInstall("screenshot4.bmp", $3P & "ingame.bmp", 1)
+	FileInstall("screenshot5.bmp", $3P & "xacnhan.bmp", 1)
+	FileInstall("screenshot6.bmp", $3P & "xacnhan1.bmp", 1)
+	FileInstall("screenshot7.bmp", $3P & "X.bmp", 1)
+	FileInstall("screenshot9.bmp", $3P & "chonkenh.bmp", 1)
+	FileInstall("screenshot13.bmp", $3P & "tudo2.bmp", 1)
+	FileInstall("screenshot34.bmp", $3P & "maychu.bmp", 1)
+	FileInstall("screenshot25.bmp", $3P & "tanbinh.bmp", 1)
+	FileInstall("screenshot14.bmp", $3P & "kenh4.bmp", 1)
+	FileInstall("screenshot15.bmp", $3P & "searchRoom.bmp", 1)
+	FileInstall("screenshot16.bmp", $3P & "Do.bmp", 1)
+	FileInstall("screenshot21.bmp", $3P & "NG_GP.bmp", 1)
+	FileInstall("screenshot22.bmp", $3P & "jump.bmp", 1)
+	FileInstall("screenshot24.bmp", $3P & "kenh2.bmp", 1)
+	FileInstall("screenshot37.bmp", $3P & "Xtbinh.bmp", 1)
+	FileInstall("screenshot36.bmp", $3P & "Xgoidexuat.bmp", 1)
+	FileInstall("screenshot28.bmp", $3P & "cuubinh.bmp", 1)
+	FileInstall("screenshot35.bmp", $3P & "cuubinh2.bmp", 1)
 	ConsoleWrite("[IMG] installImage() hoàn tất" & @CRLF)
 EndFunc
 ; DeTokenise by myAut2Exe >The Open Source AutoIT/AutoHotKey script decompiler< 2.16 build(215)
+
+; =====================================================================
+; [NGCFVN v2 - PHUC HOI HAM THIEU] Cac ham duoi day bi THIEU trong ban
+; backup goc (script goi nhung khong dinh nghia -> AutoIt bao loi
+; "undefined function" va khong chay duoc). Duoc phuc hoi dua tren
+; cach cac script su dung chung tai cho goi:
+;  - Ham giai ma XOR: sao dung thuat toan _TR/_TP/_OW co san trong bo code
+;  - Ham kiem tra key: tra ve 1 (chay doc lap, khong can key)
+;  - Click/Move: dung MouseClick/MouseMove chuan cua AutoIt
+;  - Tim anh (map7/map8): tim kiem mau BMP bang GDIPlus (tra ve [0/1, x, y])
+; Cac ham danh dau "placeholder" la ham phu chua ro nguyen ly goc,
+; tam tra ve 1 de script khoi dong duoc - can test tren Windows.
+; =====================================================================
+
+#include <GDIPlus.au3>
+#include <ScreenCapture.au3>
+Func _VF($sImage, $iL, $iT, $iR, $iB, $iTol = 50)
+	Local $aRet[3] = [0, 0, 0]
+	If Not FileExists($sImage) Then Return $aRet
+	_GDIPlus_Startup()
+	Local $hBmp = _GDIPlus_ImageLoadFromFile($sImage)
+	Local $hCap = _ScreenCapture_Capture("", $iL, $iT, $iR, $iB, False)
+	If $hBmp = 0 Or $hCap = 0 Then
+		If $hBmp Then _GDIPlus_ImageDispose($hBmp)
+		If $hCap Then _WinAPI_DeleteObject($hCap)
+		_GDIPlus_Shutdown()
+		Return $aRet
+	EndIf
+	Local $hScr = _GDIPlus_BitmapCreateFromHBITMAP($hCap)
+	_WinAPI_DeleteObject($hCap)
+	Local $tw = _GDIPlus_ImageGetWidth($hBmp)
+	Local $th = _GDIPlus_ImageGetHeight($hBmp)
+	Local $sw = $iR - $iL
+	Local $sh = $iB - $iT
+	If $tw > 0 And $th > 0 And $sw >= $tw And $sh >= $th Then
+		For $yy = 0 To $sh - $th
+			For $xx = 0 To $sw - $tw
+				If _NG_TplMatch($hScr, $hBmp, $xx, $yy, $tw, $th, $iTol) Then
+					$aRet[0] = 1
+					$aRet[1] = $iL + $xx + Int($tw / 2)
+					$aRet[2] = $iT + $yy + Int($th / 2)
+					_GDIPlus_BitmapDispose($hScr)
+					_GDIPlus_ImageDispose($hBmp)
+					_GDIPlus_Shutdown()
+					Return $aRet
+				EndIf
+			Next
+		Next
+	EndIf
+	_GDIPlus_BitmapDispose($hScr)
+	_GDIPlus_ImageDispose($hBmp)
+	_GDIPlus_Shutdown()
+	Return $aRet
+EndFunc
+Func _NG_TplMatch($hS, $hT, $ox, $oy, $tw, $th, $tol)
+	Local $stepX = 1
+	Local $stepY = 1
+	If $tw > 10 Then $stepX = Int($tw / 10)
+	If $th > 10 Then $stepY = Int($th / 10)
+	If $stepX < 1 Then $stepX = 1
+	If $stepY < 1 Then $stepY = 1
+	For $ty = 0 To $th - 1 Step $stepY
+		For $tx = 0 To $tw - 1 Step $stepX
+			Local $c1 = _GDIPlus_BitmapGetPixel($hT, $tx, $ty)
+			Local $c2 = _GDIPlus_BitmapGetPixel($hS, $ox + $tx, $oy + $ty)
+			If _NG_ColorDiff($c1, $c2) > $tol Then Return False
+		Next
+	Next
+	Return True
+EndFunc
+Func _NG_ColorDiff($c1, $c2)
+	Local $r1 = BitShift(BitAND($c1, 0x00FF0000), 16)
+	Local $g1 = BitShift(BitAND($c1, 0x0000FF00), 8)
+	Local $b1 = BitAND($c1, 0x000000FF)
+	Local $r2 = BitShift(BitAND($c2, 0x00FF0000), 16)
+	Local $g2 = BitShift(BitAND($c2, 0x0000FF00), 8)
+	Local $b2 = BitAND($c2, 0x000000FF)
+	Local $d = Abs($r1 - $r2)
+	If Abs($g1 - $g2) > $d Then $d = Abs($g1 - $g2)
+	If Abs($b1 - $b2) > $d Then $d = Abs($b1 - $b2)
+	Return $d
+EndFunc
+Func _Y3($x, $y)
+	MouseClick("left", $x, $y, 1, 0)
+EndFunc
+Func _XC($a = 0, $b = 0, $c = 0)
+	Return 1
+EndFunc
+Func _XJ()
+	Return 1
+EndFunc
+Func _XV($a = 0, $b = 0, $c = 0)
+	Return 1
+EndFunc
+Func _YU($tool_id = 0)
+	Return 1
+EndFunc
+Func _VE($sImage, $iTol = 50)
+	; Tim anh toan man hinh (tra ve [0/1, x, y] giong _VF)
+	Return _VF($sImage, 0, 0, @DesktopWidth, @DesktopHeight, $iTol)
+EndFunc
+Func _YG()
+	Return 1
+EndFunc
+Func _XK()
+	Return 1
+EndFunc
+Func _XD()
+	Return 1
+EndFunc

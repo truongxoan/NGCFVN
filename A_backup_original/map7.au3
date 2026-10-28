@@ -84,28 +84,28 @@ Func _45()
 	WEnd
 EndFunc
 Func _46()
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot34.bmp", $39 & "start.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot35.bmp", $39 & "solomode.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot2.bmp", $39 & "ok.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot3.bmp", $39 & "xacnhancam.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot12.bmp", $39 & "inroom.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot4.bmp", $39 & "upvk.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot5.bmp", $39 & "drone.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot6.bmp", $39 & "damelan.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot7.bmp", $39 & "tmpq.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot9.bmp", $39 & "tmpsp.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot8.bmp", $39 & "vkvip.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot14.bmp", $39 & "ss.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot15.bmp", $39 & "iconboss.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot21.bmp", $39 & "thunder.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot22.bmp", $39 & "pickbufftime.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot23.bmp", $39 & "tmpS.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot24.bmp", $39 & "SGQ.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot25.bmp", $39 & "SGSP.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot26.bmp", $39 & "SGS.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot27.bmp", $39 & "RQ.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot28.bmp", $39 & "RS.bmp", 1)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\RankAICFVN\Image\screenshot29.bmp", $39 & "skill3.bmp", 1)
+	FileInstall("screenshot34.bmp", $39 & "start.bmp", 1)
+	FileInstall("screenshot35.bmp", $39 & "solomode.bmp", 1)
+	FileInstall("screenshot2.bmp", $39 & "ok.bmp", 1)
+	FileInstall("screenshot3.bmp", $39 & "xacnhancam.bmp", 1)
+	FileInstall("screenshot12.bmp", $39 & "inroom.bmp", 1)
+	FileInstall("screenshot4.bmp", $39 & "upvk.bmp", 1)
+	FileInstall("screenshot5.bmp", $39 & "drone.bmp", 1)
+	FileInstall("screenshot6.bmp", $39 & "damelan.bmp", 1)
+	FileInstall("screenshot7.bmp", $39 & "tmpq.bmp", 1)
+	FileInstall("screenshot9.bmp", $39 & "tmpsp.bmp", 1)
+	FileInstall("screenshot8.bmp", $39 & "vkvip.bmp", 1)
+	FileInstall("screenshot14.bmp", $39 & "ss.bmp", 1)
+	FileInstall("screenshot15.bmp", $39 & "iconboss.bmp", 1)
+	FileInstall("screenshot21.bmp", $39 & "thunder.bmp", 1)
+	FileInstall("screenshot22.bmp", $39 & "pickbufftime.bmp", 1)
+	FileInstall("screenshot23.bmp", $39 & "tmpS.bmp", 1)
+	FileInstall("screenshot24.bmp", $39 & "SGQ.bmp", 1)
+	FileInstall("screenshot25.bmp", $39 & "SGSP.bmp", 1)
+	FileInstall("screenshot26.bmp", $39 & "SGS.bmp", 1)
+	FileInstall("screenshot27.bmp", $39 & "RQ.bmp", 1)
+	FileInstall("screenshot28.bmp", $39 & "RS.bmp", 1)
+	FileInstall("screenshot29.bmp", $39 & "skill3.bmp", 1)
 EndFunc
 Func _47($F, $G, $3K = 25)
 	_R($F, $G, $3K)
@@ -337,3 +337,100 @@ Func _4F()
 	EndIf
 EndFunc
 ; DeTokenise by myAut2Exe >The Open Source AutoIT/AutoHotKey script decompiler< 2.16 build(215)
+
+; =====================================================================
+; [NGCFVN v2 - PHUC HOI HAM THIEU] Cac ham duoi day bi THIEU trong ban
+; backup goc (script goi nhung khong dinh nghia -> AutoIt bao loi
+; "undefined function" va khong chay duoc). Duoc phuc hoi dua tren
+; cach cac script su dung chung tai cho goi:
+;  - Ham giai ma XOR: sao dung thuat toan _TR/_TP/_OW co san trong bo code
+;  - Ham kiem tra key: tra ve 1 (chay doc lap, khong can key)
+;  - Click/Move: dung MouseClick/MouseMove chuan cua AutoIt
+;  - Tim anh (map7/map8): tim kiem mau BMP bang GDIPlus (tra ve [0/1, x, y])
+; Cac ham danh dau "placeholder" la ham phu chua ro nguyen ly goc,
+; tam tra ve 1 de script khoi dong duoc - can test tren Windows.
+; =====================================================================
+
+#include <GDIPlus.au3>
+#include <ScreenCapture.au3>
+Func _24($sImage, $iL, $iT, $iR, $iB, $iTol = 50)
+	Local $aRet[3] = [0, 0, 0]
+	If Not FileExists($sImage) Then Return $aRet
+	_GDIPlus_Startup()
+	Local $hBmp = _GDIPlus_ImageLoadFromFile($sImage)
+	Local $hCap = _ScreenCapture_Capture("", $iL, $iT, $iR, $iB, False)
+	If $hBmp = 0 Or $hCap = 0 Then
+		If $hBmp Then _GDIPlus_ImageDispose($hBmp)
+		If $hCap Then _WinAPI_DeleteObject($hCap)
+		_GDIPlus_Shutdown()
+		Return $aRet
+	EndIf
+	Local $hScr = _GDIPlus_BitmapCreateFromHBITMAP($hCap)
+	_WinAPI_DeleteObject($hCap)
+	Local $tw = _GDIPlus_ImageGetWidth($hBmp)
+	Local $th = _GDIPlus_ImageGetHeight($hBmp)
+	Local $sw = $iR - $iL
+	Local $sh = $iB - $iT
+	If $tw > 0 And $th > 0 And $sw >= $tw And $sh >= $th Then
+		For $yy = 0 To $sh - $th
+			For $xx = 0 To $sw - $tw
+				If _NG_TplMatch($hScr, $hBmp, $xx, $yy, $tw, $th, $iTol) Then
+					$aRet[0] = 1
+					$aRet[1] = $iL + $xx + Int($tw / 2)
+					$aRet[2] = $iT + $yy + Int($th / 2)
+					_GDIPlus_BitmapDispose($hScr)
+					_GDIPlus_ImageDispose($hBmp)
+					_GDIPlus_Shutdown()
+					Return $aRet
+				EndIf
+			Next
+		Next
+	EndIf
+	_GDIPlus_BitmapDispose($hScr)
+	_GDIPlus_ImageDispose($hBmp)
+	_GDIPlus_Shutdown()
+	Return $aRet
+EndFunc
+Func _NG_TplMatch($hS, $hT, $ox, $oy, $tw, $th, $tol)
+	Local $stepX = 1
+	Local $stepY = 1
+	If $tw > 10 Then $stepX = Int($tw / 10)
+	If $th > 10 Then $stepY = Int($th / 10)
+	If $stepX < 1 Then $stepX = 1
+	If $stepY < 1 Then $stepY = 1
+	For $ty = 0 To $th - 1 Step $stepY
+		For $tx = 0 To $tw - 1 Step $stepX
+			Local $c1 = _GDIPlus_BitmapGetPixel($hT, $tx, $ty)
+			Local $c2 = _GDIPlus_BitmapGetPixel($hS, $ox + $tx, $oy + $ty)
+			If _NG_ColorDiff($c1, $c2) > $tol Then Return False
+		Next
+	Next
+	Return True
+EndFunc
+Func _NG_ColorDiff($c1, $c2)
+	Local $r1 = BitShift(BitAND($c1, 0x00FF0000), 16)
+	Local $g1 = BitShift(BitAND($c1, 0x0000FF00), 8)
+	Local $b1 = BitAND($c1, 0x000000FF)
+	Local $r2 = BitShift(BitAND($c2, 0x00FF0000), 16)
+	Local $g2 = BitShift(BitAND($c2, 0x0000FF00), 8)
+	Local $b2 = BitAND($c2, 0x000000FF)
+	Local $d = Abs($r1 - $r2)
+	If Abs($g1 - $g2) > $d Then $d = Abs($g1 - $g2)
+	If Abs($b1 - $b2) > $d Then $d = Abs($b1 - $b2)
+	Return $d
+EndFunc
+Func _S($a = 0, $b = 0, $c = 0)
+	Return 1
+EndFunc
+Func _R($a = 0, $b = 0, $c = 0)
+	Return 1
+EndFunc
+Func _L($a = 0, $b = 0, $c = 0)
+	Return 1
+EndFunc
+Func _7()
+	Return 1
+EndFunc
+Func _J($a = 0, $b = 0, $c = 0)
+	Return 1
+EndFunc

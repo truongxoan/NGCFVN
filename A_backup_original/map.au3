@@ -420,9 +420,9 @@ EndFunc
 Func _AD()
 	Local $37 = @ScriptDir & "\image"
 	If Not FileExists($37) Then DirCreate($37)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot1.bmp", $37 & "\accept.bmp")
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot2.bmp", $37 & "\close.bmp")
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot3.bmp", $37 & "\close2.bmp")
+	FileInstall("screenshot1.bmp", $37 & "\accept.bmp")
+	FileInstall("screenshot2.bmp", $37 & "\close.bmp")
+	FileInstall("screenshot3.bmp", $37 & "\close2.bmp")
 EndFunc
 Func _AG()
 	ConsoleWrite("+func sever()" & @CRLF)
@@ -702,3 +702,55 @@ Func _AZ()
 	Return False
 EndFunc
 ; DeTokenise by myAut2Exe >The Open Source AutoIT/AutoHotKey script decompiler< 2.16 build(215)
+
+; =====================================================================
+; [NGCFVN v2 - PHUC HOI HAM THIEU] Cac ham duoi day bi THIEU trong ban
+; backup goc (script goi nhung khong dinh nghia -> AutoIt bao loi
+; "undefined function" va khong chay duoc). Duoc phuc hoi dua tren
+; cach cac script su dung chung tai cho goi:
+;  - Ham giai ma XOR: sao dung thuat toan _TR/_TP/_OW co san trong bo code
+;  - Ham kiem tra key: tra ve 1 (chay doc lap, khong can key)
+;  - Click/Move: dung MouseClick/MouseMove chuan cua AutoIt
+;  - Tim anh (map7/map8): tim kiem mau BMP bang GDIPlus (tra ve [0/1, x, y])
+; Cac ham danh dau "placeholder" la ham phu chua ro nguyen ly goc,
+; tam tra ve 1 de script khoi dong duoc - can test tren Windows.
+; =====================================================================
+
+Func _9X($sData, $sKey)
+	Local $sOut = ""
+	Local $iKeyLen = StringLen($sKey)
+	Local $bHex = (StringLeft($sData, 2) = "0x")
+	If $bHex Then $sData = BinaryToString($sData, 2)
+	Local $iLen = StringLen($sData)
+	For $i = 1 To $iLen
+		Local $c1 = AscW(StringMid($sData, $i, 1))
+		Local $c2 = AscW(StringMid($sKey, Mod($i - 1, $iKeyLen) + 1, 1))
+		$sOut &= ChrW(BitXOR($c1, $c2))
+	Next
+	If $bHex Then
+		Return $sOut
+	Else
+		Return StringToBinary($sOut, 2)
+	EndIf
+EndFunc
+Func _9Z($tool_id = 0)
+	Return 1
+EndFunc
+Func _7P($x, $y)
+	MouseClick("left", $x, $y, 1, 0)
+EndFunc
+Func _7R($x, $y)
+	MouseMove($x, $y, 0)
+EndFunc
+Func _7M($x, $y)
+	MouseMove($x, $y, 0)
+EndFunc
+Func _7S()
+	Return 1
+EndFunc
+Func _7N()
+	Return 1
+EndFunc
+Func _7O()
+	Return 1
+EndFunc

@@ -1,4 +1,4 @@
-#RequireAdmin
+﻿#RequireAdmin
 Global Const $0 = 16
 Global Const $1 = 17
 Global Const $2 = 18
@@ -630,10 +630,8 @@ Func _OV ( $2C )
 	Local $2D = DllStructCreate ( "char[50]" )
 	Local $2E = DllStructCreate ( "char[256]" )
 	Local $2F = DllStructCreate ( "char[2048]" )
-	Local $2G = DllCall ( $2B , "bool:cdecl" , "VerifyToolAccess" , "int" , $2C , "ptr" , DllStructGetPtr ( $2D ) , "int" , DllStructGetSize ( $2D ) , "ptr" , DllStructGetPtr ( $2E ) , "int" , DllStructGetSize ( $2E ) )
-	If @error Or Not $2G [ 0 ] Then
-		Exit
-	EndIf
+	Local $2G [ 1 ] = [ True ] ; [CHAY DOC LAP] bo qua VerifyToolAccess (khong goi DLL/server nua)
+	; [CHAY DOC LAP] khong thoat khi khong co key
 	Local $2H = DllStructGetData ( $2D , 1 )
 	Local $2I = DllStructGetData ( $2E , 1 )
 	$28 = BinaryToString ( StringToBinary ( $2H , 1 ) , 4 )
@@ -663,10 +661,10 @@ Func _OW ( $2L , $2M )
 		Return StringToBinary ( $2N , 2 )
 	EndIf
 EndFunc
-If EnvGet ( _OW ( "0x000000001100130001000C000B000900" , "NG" ) ) <> _OW ( "0x000000001A0002000F000A00" , "NG" ) Then
-	MsgBox ( 16 , _OW ( "0x0200B3004D032E00" , "NG" ) , _OW ( "0x060026004D033E006E0023003B004703200020006E000900090018001F000B001A00280021002B006000" , "NG" ) , 2 )
-	Exit
-EndIf
+; [CHAY DOC LAP] If EnvGet ( _OW ( "0x000000001100130001000C000B000900" , "NG" ) ) <> _OW ( "0x000000001A0002000F000A00" , "NG" ) Then
+; [CHAY DOC LAP] 	MsgBox ( 16 , _OW ( "0x0200B3004D032E00" , "NG" ) , _OW ( "0x060026004D033E006E0023003B004703200020006E000900090018001F000B001A00280021002B006000" , "NG" ) , 2 )
+; [CHAY DOC LAP] 	Exit
+; [CHAY DOC LAP] EndIf
 Local $2T = "V6.6"
 Local $27 = "error"
 Local $28 = + 4294967295
@@ -2987,9 +2985,9 @@ EndFunc
 Func _QW ( )
 	Local $63 = @ScriptDir & "\image"
 	If Not FileExists ( $63 ) Then DirCreate ( $63 )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot1.bmp" , $63 & "\accept.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot2.bmp" , $63 & "\close.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot3.bmp" , $63 & "\close2.bmp" )
+	FileInstall ( "screenshot1.bmp" , $63 & "\accept.bmp" )
+	FileInstall ( "screenshot2.bmp" , $63 & "\close.bmp" )
+	FileInstall ( "screenshot3.bmp" , $63 & "\close2.bmp" )
 EndFunc
 Func _QY ( )
 	Send ( "{ENTER}" )

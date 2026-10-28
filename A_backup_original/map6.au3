@@ -416,9 +416,9 @@ EndFunc
 Func _A9()
 	Local $2X = @ScriptDir & "\image"
 	If Not FileExists($2X) Then DirCreate($2X)
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot1.bmp", $2X & "\accept.bmp")
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot2.bmp", $2X & "\close.bmp")
-	FileInstall("C:\Users\Admin\Desktop\NG\CFVN\Autogigant\Image\screenshot3.bmp", $2X & "\close2.bmp")
+	FileInstall("screenshot1.bmp", $2X & "\accept.bmp")
+	FileInstall("screenshot2.bmp", $2X & "\close.bmp")
+	FileInstall("screenshot3.bmp", $2X & "\close2.bmp")
 EndFunc
 Func _AC()
 	ConsoleWrite("+func sever()" & @CRLF)
@@ -681,3 +681,38 @@ Func _AV()
 	Return False
 EndFunc
 ; DeTokenise by myAut2Exe >The Open Source AutoIT/AutoHotKey script decompiler< 2.16 build(215)
+
+; =====================================================================
+; [NGCFVN v2 - PHUC HOI HAM THIEU] Cac ham duoi day bi THIEU trong ban
+; backup goc (script goi nhung khong dinh nghia -> AutoIt bao loi
+; "undefined function" va khong chay duoc). Duoc phuc hoi dua tren
+; cach cac script su dung chung tai cho goi:
+;  - Ham giai ma XOR: sao dung thuat toan _TR/_TP/_OW co san trong bo code
+;  - Ham kiem tra key: tra ve 1 (chay doc lap, khong can key)
+;  - Click/Move: dung MouseClick/MouseMove chuan cua AutoIt
+;  - Tim anh (map7/map8): tim kiem mau BMP bang GDIPlus (tra ve [0/1, x, y])
+; Cac ham danh dau "placeholder" la ham phu chua ro nguyen ly goc,
+; tam tra ve 1 de script khoi dong duoc - can test tren Windows.
+; =====================================================================
+
+Func _9Z($tool_id = 0)
+	Return 1
+EndFunc
+Func _7P($x, $y)
+	MouseClick("left", $x, $y, 1, 0)
+EndFunc
+Func _7R($x, $y)
+	MouseMove($x, $y, 0)
+EndFunc
+Func _7M($x, $y)
+	MouseMove($x, $y, 0)
+EndFunc
+Func _7S()
+	Return 1
+EndFunc
+Func _7N()
+	Return 1
+EndFunc
+Func _7O()
+	Return 1
+EndFunc

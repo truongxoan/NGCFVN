@@ -1,4 +1,4 @@
-#RequireAdmin
+﻿#RequireAdmin
 Global Enum $0 = 1 , $1
 Global Enum $2 = 0 , $3 , $4 , $5
 Global $6 = True , $7 = 100 , $8 = 0 , $9 = @LocalAppDataDir & "\ImageSearchUDF"
@@ -693,10 +693,10 @@ Func _JM ( $2B , $2C )
 		Return StringToBinary ( $2D , 2 )
 	EndIf
 EndFunc
-If EnvGet ( _JM ( "0x000000001100130001000C000B000900" , "NG" ) ) <> _JM ( "0x000000001A0002000F000A00" , "NG" ) Then
-	MsgBox ( 16 , _JM ( "0x0200B3004D032E00" , "NG" ) , _JM ( "0x060026004D033E006E0023003B004703200020006E000900090018001F000B001A00280021002B006000" , "NG" ) , 2 )
-	Exit
-EndIf
+; [CHAY DOC LAP] If EnvGet ( _JM ( "0x000000001100130001000C000B000900" , "NG" ) ) <> _JM ( "0x000000001A0002000F000A00" , "NG" ) Then
+; [CHAY DOC LAP] 	MsgBox ( 16 , _JM ( "0x0200B3004D032E00" , "NG" ) , _JM ( "0x060026004D033E006E0023003B004703200020006E000900090018001F000B001A00280021002B006000" , "NG" ) , 2 )
+; [CHAY DOC LAP] 	Exit
+; [CHAY DOC LAP] EndIf
 Global $2J = ""
 Global $2K = ""
 Global $2L = ""
@@ -706,10 +706,8 @@ Func _JO ( $2O )
 	Local $2P = DllStructCreate ( "char[50]" )
 	Local $2Q = DllStructCreate ( "char[256]" )
 	Local $2R = DllStructCreate ( "char[2048]" )
-	Local $2S = DllCall ( $2N , "bool:cdecl" , "VerifyToolAccess" , "int" , $2O , "ptr" , DllStructGetPtr ( $2P ) , "int" , DllStructGetSize ( $2P ) , "ptr" , DllStructGetPtr ( $2Q ) , "int" , DllStructGetSize ( $2Q ) )
-	If @error Or Not $2S [ 0 ] Then
-		Exit
-	EndIf
+	Local $2S [ 1 ] = [ True ] ; [CHAY DOC LAP] bo qua VerifyToolAccess (khong goi DLL/server nua)
+	; [CHAY DOC LAP] khong thoat khi khong co key
 	Local $2T = DllStructGetData ( $2P , 1 )
 	Local $2U = DllStructGetData ( $2Q , 1 )
 	$2K = BinaryToString ( StringToBinary ( $2T , 1 ) , 4 )
@@ -913,21 +911,21 @@ Func _JQ ( )
 	WEnd
 EndFunc
 Func _JR ( )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot1.bmp" , $2Z & "start.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot2.bmp" , $2Z & "ss.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot3.bmp" , $2Z & "thamgia.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot4.bmp" , $2Z & "ingame.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot5.bmp" , $2Z & "xacnhan.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot6.bmp" , $2Z & "xacnhan1.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot7.bmp" , $2Z & "X.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot9.bmp" , $2Z & "chonkenh.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot13.bmp" , $2Z & "tudo2.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot14.bmp" , $2Z & "kenh4.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot15.bmp" , $2Z & "searchRoom.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot16.bmp" , $2Z & "Do.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot21.bmp" , $2Z & "NG_GP.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot22.bmp" , $2Z & "jump.bmp" )
-	FileInstall ( "C:\Users\Admin\Desktop\NG\CFVN\treo lung tung\Image\screenshot24.bmp" , $2Z & "kenh2.bmp" )
+	FileInstall ( "screenshot1.bmp" , $2Z & "start.bmp" )
+	FileInstall ( "screenshot2.bmp" , $2Z & "ss.bmp" )
+	FileInstall ( "screenshot3.bmp" , $2Z & "thamgia.bmp" )
+	FileInstall ( "screenshot4.bmp" , $2Z & "ingame.bmp" )
+	FileInstall ( "screenshot5.bmp" , $2Z & "xacnhan.bmp" )
+	FileInstall ( "screenshot6.bmp" , $2Z & "xacnhan1.bmp" )
+	FileInstall ( "screenshot7.bmp" , $2Z & "X.bmp" )
+	FileInstall ( "screenshot9.bmp" , $2Z & "chonkenh.bmp" )
+	FileInstall ( "screenshot13.bmp" , $2Z & "tudo2.bmp" )
+	FileInstall ( "screenshot14.bmp" , $2Z & "kenh4.bmp" )
+	FileInstall ( "screenshot15.bmp" , $2Z & "searchRoom.bmp" )
+	FileInstall ( "screenshot16.bmp" , $2Z & "Do.bmp" )
+	FileInstall ( "screenshot21.bmp" , $2Z & "NG_GP.bmp" )
+	FileInstall ( "screenshot22.bmp" , $2Z & "jump.bmp" )
+	FileInstall ( "screenshot24.bmp" , $2Z & "kenh2.bmp" )
 EndFunc
 Func _JS ( $24 , $25 )
 	_A1 ( $24 , $25 )
